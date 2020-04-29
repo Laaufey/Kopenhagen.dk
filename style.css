@@ -1,0 +1,180 @@
+@import url("https://use.typekit.net/swq2mhc.css");
+
+* {
+    margin:0;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 3.5em;
+    margin-bottom: .2em
+}
+
+h2 {
+    margin-bottom: .3em;
+    grid-area: header;
+}
+
+
+
+body {
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    margin: 0;
+}
+
+header {
+    height: 7em;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+.logo {
+    height: 7em;
+}
+
+nav {
+    list-style-type: none;
+    text-transform: uppercase;
+    float: right;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+nav li a {
+    display: inline-block;
+    padding: 0 1.5em;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+
+.frontPagePhoto {
+    height: 70vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 5em;
+}
+
+.frontPageImg {
+    flex-shrink: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.frontPageCopy {
+    z-index: 1;
+    position: absolute;
+    color: white;
+    width: 50vw;
+    left: 10%;
+}
+
+.cta-btn {
+    background-color: #6F00D2;
+    color: white;
+    font-size: 1em;
+    padding: 1em;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: 700;
+    border: none;
+}
+section{
+    margin: auto 5vw;
+    column-gap: 2em;
+}
+.firstSec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "line line"
+        "1 2"
+        "subscribe subscribe"
+        "3 3";
+}
+
+.fourColSec{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        "line line line line";
+}
+
+hr.line {
+    border: 1px solid;
+    grid-area: line;
+}
+
+article.event{
+    display: flex;
+    flex-flow: column;
+    margin: 2em 0 4em 0;
+}
+
+article.newsletter{
+        display: flex;
+    flex-flow: column;
+    margin: 2em 0 4em 0;
+}
+
+.eventImg{
+    width: 100%;
+    padding-bottom: 1em
+}
+.subscribe {
+    grid-area: subscribe;
+}
+.email{
+    width: 100%;
+    border: .5px solid lightgray;
+    box-shadow: 1px 1px 5px gray;
+    padding: .5em;
+    margin-top: 1em;
+    color: gray;
+}
+
+.signUp{
+    background-color: #6F00D2;
+    color: white;
+    font-size: .8em;
+    padding: .5em;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: 700;
+    border: none;
+    width: 9em;
+    text-transform: uppercase;
+    margin-top: 1em;
+}
+
+footer{
+    background-color: #9C9C9C;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.first{
+    padding: 3em;
+}
+
+@media screen and (min-width: 1024px){
+    .firstSec {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header subscribe"
+        "line line line";
+}
+
+}
