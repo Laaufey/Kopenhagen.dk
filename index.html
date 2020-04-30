@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,18 +29,15 @@
     <section class="firstSec">
         <h2>Recommended</h2>
         <hr class="line">
+
+        <!--
         <article class="event">
             <img class="eventImg" src="Louisiana+230120_002.jpg">
             <h3>NAME</h3>
             <h4>Artist</h4>
             <h5>Time</h5>
         </article>
-        <article class="event">
-            <img class="eventImg" src="Louisiana+230120_002.jpg">
-            <h3>NAME</h3>
-            <h4>Artist</h4>
-            <h5>Time</h5>
-        </article>
+-->
         <h2 class="subscribe">Subscribe</h2>
         <article class="newsletter">
             <p>Subscribe to our newsletter to get the latest events, exhibitions and openings delivered to your inbox each week.</p>
@@ -50,23 +48,28 @@
     <section class="happening fourColSec">
         <h2>Happening now</h2>
         <hr class="line">
+<!--
         <article class="event">
             <img class="eventImg" src="Louisiana+230120_002.jpg">
             <h3>NAME</h3>
             <h4>Artist</h4>
             <h5>Time</h5>
         </article>
+-->
     </section>
     <section class="upcoming fourColSec">
         <h2>Upcoming</h2>
         <hr class="line">
+<!--
         <article class="event">
             <img class="eventImg" src="Louisiana+230120_002.jpg">
             <h3>NAME</h3>
             <h4>Artist</h4>
             <h5>Time</h5>
         </article>
+-->
     </section>
+
     <footer>
         <div class="first">
             <p>Kopenhagen.dk</p>
@@ -82,5 +85,26 @@
 
         </div>
     </footer>
-    <script src="script.js"></script>
-</body></html>
+
+
+
+
+
+
+
+
+      <template>
+            <article class="event">
+                <img class="eventImg" src="Louisiana+230120_002.jpg">
+                <h3 class="eventTitle">NAME</h3>
+                <h4 class="artistName">Artist</h4>
+                <h5><span class="dateStart">Start</span>  /  <span class="dateEnd">End</span></h5>
+            </article>
+        </template>
+
+
+
+    <script src="frontpage_script.js"></script>
+</body>
+
+</html>
