@@ -98,9 +98,9 @@ section{
     grid-template-areas:
         "header header"
         "line line"
-        "1 2"
+        ". ."
         "subscribe subscribe"
-        "3 3";
+        "news .";
 }
 
 .fourColSec{
@@ -123,9 +123,10 @@ article.event{
 }
 
 article.newsletter{
-        display: flex;
+    display: flex;
     flex-flow: column;
     margin: 2em 0 4em 0;
+    grid-area: news;
 }
 
 .eventImg{
@@ -174,7 +175,8 @@ div.first{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
         "header header subscribe"
-        "line line line";
+        "line line line"
+        ". . news";
 }
 
 }
