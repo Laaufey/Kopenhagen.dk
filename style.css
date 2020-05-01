@@ -11,9 +11,20 @@ h1 {
     margin-bottom: .2em
 }
 
+.art{
+    text-align: center;
+}
+
 h2 {
     margin-bottom: .3em;
     grid-area: header;
+    font-size: 2.5em;
+}
+
+h6{
+    color: #969696;
+    text-transform: uppercase;
+    margin: 0 0 .5em 0;
 }
 
 
@@ -22,6 +33,7 @@ body {
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     margin: 0;
+    font-weight: 100;
 }
 
 header {
@@ -94,28 +106,38 @@ section{
 }
 .firstSec {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        "header header"
-        "line line"
-        ". ."
-        "subscribe subscribe"
-        "news .";
+        "header"
+        "line"
+        "."
+        "."
+        "subscribe"
+        "news";
 }
 
 .fourColSec{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        "header header header header"
-        "line line line line";
+        "header"
+        "line";
 }
 
 hr.line {
     border: 1px solid;
     grid-area: line;
 }
+.mynd{
+    max-height: 20vh;
+    min-width: auto;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
 
+.firstSec .event .mynd{
+    max-height: 25vh;
+}
 article.event{
     display: flex;
     flex-flow: column;
@@ -131,13 +153,12 @@ article.newsletter{
 
 .eventImg{
     width: 100%;
-    padding-bottom: 1em
 }
 .subscribe {
     grid-area: subscribe;
 }
 .email{
-    width: 100%;
+    width: 91%;
     border: .5px solid lightgray;
     box-shadow: 1px 1px 5px gray;
     padding: .5em;
@@ -160,15 +181,61 @@ article.newsletter{
 }
 
 footer{
-    background-color: #9C9C9C;
+    background-color: #D3D3D3;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    font-weight: 100;
+    bottom: 0;
 }
 
 div.first{
     padding: 3em;
 }
 
+button.archive-btn{
+    padding: .5em;
+    border: 1px solid black;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 2em 2em 2em 0;
+    width: 7em;
+}
+@media screen and (min-width: 420px){
+    .firstSec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "line line"
+        ". ."
+        "subscribe subscribe"
+        "news .";
+}
+    .fourColSec{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "line line";
+}
+    .mynd{
+        max-height: 15vh;}
+}
+.firstSec .event .mynd{
+    max-height: 25vh;
+}
+
+@media screen and (min-width: 750px){
+    .fourColSec{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header"
+        "line line line";
+}
+        .mynd{
+        max-height: 13vh;}
+}
 @media screen and (min-width: 1024px){
     .firstSec {
     display: grid;
@@ -179,4 +246,14 @@ div.first{
         ". . news";
 }
 
+    .fourColSec{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        "line line line line";
 }
+        .mynd{
+        max-height: 15vh;}
+}
+
