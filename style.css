@@ -128,7 +128,7 @@ hr.line {
     border: 1px solid;
     grid-area: line;
 }
-.mynd{
+.photo{
     max-height: 20vh;
     min-width: auto;
     overflow: hidden;
@@ -218,7 +218,7 @@ button.archive-btn{
         "header header"
         "line line";
 }
-    .mynd{
+    .photo{
         max-height: 15vh;}
 }
 .firstSec .event .mynd{
@@ -233,7 +233,7 @@ button.archive-btn{
         "header header header"
         "line line line";
 }
-        .mynd{
+        .photo{
         max-height: 13vh;}
 }
 @media screen and (min-width: 1024px){
@@ -253,7 +253,7 @@ button.archive-btn{
         "header header header header"
         "line line line line";
 }
-        .mynd{
+        .photo{
         max-height: 15vh;}
 }
 
