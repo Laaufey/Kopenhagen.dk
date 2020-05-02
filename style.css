@@ -13,7 +13,38 @@ h1 {
 
 .art{
     text-align: center;
+    display:block;
 }
+
+
+
+
+/*    #####  Search bar styling  ######*/
+
+.searchWrapper {
+    text-align: center;
+
+}
+
+
+.searchResultWrapper {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    grid-auto-rows: 1fr;
+}
+
+/*    ##########    */
+
+
+
+
+
+
+
+
+
 
 h2 {
     margin-bottom: .3em;
