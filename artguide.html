@@ -15,21 +15,69 @@
             <li><a href="artguide.html">Art Guide</a></li>
             <li><a href="archive.html">Archive</a></li>
             <li><a href="about.html">About</a></li>
+            <input oninput="searchByKeyword(this.value)" type="search" class="searchInNav searchByKeyword">
         </nav>
     </header>
     <h1 class="art">Art Guide</h1>
     <h2 class="art">Browse</h2>
 
+<!--    <button id="resetFilter">Reset filter</button>-->
 
+
+
+    <!--   we use the HTML DOM to assign an "oninput" event to an input element.-->
     <div class="searchWrapper">
-        <input oninput="search(this.value)" type="search" class="searchByKeyword" placeholder="Keyword" onfocus="this.placeholder=''" onblur="this.placeholder='Keyword'">
-        <input oninput="search(this.value)" type="date" class="searchByDate" placeholder="Date" onfocus="this.placeholder=''" onblur="this.placeholder='Date'">
-        <input oninput="search(this.value)" type="search" class="searchByarea" placeholder="Area" onfocus="this.placeholder=''" onblur="this.placeholder='Area'">
+
+
+        <div class="dropdown">
+            <button class="dropbtn">Filter by location ↓
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a id="intitutionsDrop" href="#">Institutions</a>
+                <a id="galleriesDrop" href="#">Galleries</a>
+                <a id="showroomsDrop" href="#">Showrooms</a>
+
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Filter by type ↓
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a id="openingsDrop" href="#">Openings</a>
+                <a id="exibitionsDrop" href="#">Exibitions</a>
+                <a id="eventsDrop" href="#">Events</a>
+            </div>
+        </div>
+
+        <input oninput="searchByKeyword(this.value)" type="search" class="search searchByKeyword" placeholder="Keyword" onfocus="this.placeholder=''" onblur="this.placeholder='Keyword'">
+        <input oninput="searchByDate(this.value)" type="search" class="search searchByDate" placeholder="Date" onfocus="this.placeholder=''" onblur="this.placeholder='Date'">
+        <input oninput="searchByArea(this.value)" type="search" class="search searchByarea" placeholder="City or Area" onfocus="this.placeholder=''" onblur="this.placeholder='Area'">
+        <!--   <input type="text" id="area" value="Mickey">-->
     </div>
 
+    <button class="reset_all" onClick="window.location.reload();">Reset filters/search</button>
+
+    <!--
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a id="intitutionsDrop" href="#">Institutions</a>
+                <a id="galleriesDrop" href="#">Galleries</a>
+                <a id="showroomsDrop" href="#">Showrooms</a>
+            </div>
+        </div>
+    </div>
+-->
 
 
-    <div class="searchResultWrapper"></div>
+
+    <section class="searchResultWrapper fourColSec"></section>
 
 
 
@@ -59,7 +107,7 @@
         </article>
 -->
     </section>
-    <section class="exhibitions fourColSec">
+    <section class="showrooms fourColSec">
         <h2>Showrooms</h2>
         <hr class="line">
         <!--
@@ -71,6 +119,26 @@
         </article>
 -->
     </section>
+
+
+<!--
+
+    <section class="openings fourColSec">
+        <h2>Openings</h2>
+        <hr class="line">
+
+        <article class="event">
+            <img class="eventImg" src="Louisiana+230120_002.jpg">
+            <h3>NAME</h3>
+            <h4>Artist</h4>
+            <h5>Time</h5>
+        </article>
+
+    </section>
+-->
+
+
+
 
     <footer>
         <div class="first">
