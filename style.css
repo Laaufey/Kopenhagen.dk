@@ -253,7 +253,6 @@ button.archive-btn {
         max-height: 13vh;
     }
 }
-<<<<<<< HEAD
 
 @media screen and (min-width: 1024px) {
     .firstSec {
@@ -276,10 +275,6 @@ button.archive-btn {
     .photo {
         max-height: 15vh;
     }
-=======
-.firstSec .event .photo{
-    max-height: 25vh;
->>>>>>> origin/master
 }
 
 
