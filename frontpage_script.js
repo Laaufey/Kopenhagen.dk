@@ -1,3 +1,18 @@
+//window.addEventListener('DOMContentLoaded', getData)
+
+//const dataLink2 = "http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening"
+//
+//function getData() {
+//    fetch(dataLink2)
+//    .then(res => res.json())
+//    .then(showHappening)
+//
+//}
+
+
+
+
+
 // fetching the data from WordPress
 fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
     .then(res => res.json())
@@ -8,6 +23,12 @@ fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
 function handleData(happening) {
     // looping through each post
     happening.forEach(showHappening)
+
+//    const ulrParams = new URLSearchParams(window.location.search);
+//    console.log("URLSearchParams" + window.location);
+//    const theHappeningId = ulrParams.get("happening_id");
+//    console.log(theHappeningId);
+
 }
 
 
@@ -15,6 +36,7 @@ function handleData(happening) {
 
 function showHappening(happening) {
     //    console.log(happening)
+
 
     //grab the template from html file
     const template = document.querySelector("template").content;
@@ -35,12 +57,13 @@ function showHappening(happening) {
     // 1. condition: if any of the posts is recommended (if is recommended, has the value "1")
     if (happening.recomended == "1") {
 
-    // 2. append the clone in the "Recommended" section ("fistsSec" section in the html)
+        // 2. append the clone in the "Recommended" section ("fistsSec" section in the html)
         document.querySelector(".firstSec").appendChild(clone);
     }
 
 
-
+    let a = clone.querySelector('a');
+    a.href += happening.id;  // takes the existing value of the href attribute and adds the happening ID from JSON
 
 
     //###    Happening now / Upcoming    ###
@@ -67,23 +90,23 @@ function showHappening(happening) {
 
     // puting all the dates values from above, into one string, in the desired format (yyyy-mm-dd), in the variable: "today"
     const today = "" + year + "-" + "0" + month + "-" + date;
-    console.log("Today(converted): " + today)
+//    console.log("Today(converted): " + today)
 
 
     // 2. creating a variable for the event's starting and ending date
     const eventStartDate = happening.date_start;
     const eventEndDate = happening.date_end;
-    console.log("Event Start Date: " + eventStartDate)
+//    console.log("Event Start Date: " + eventStartDate)
 
 
     // 3. comparing the dates and injecting the events in the right category
     function CompareDate() {
 
         if (today > eventStartDate) {
-            console.log("Happening now");
+//            console.log("Happening now");
             document.querySelector(".happening").appendChild(clone);
         } else if (today < eventStartDate) {
-            console.log("Upcoming");
+//            console.log("Upcoming");
             document.querySelector(".upcoming").appendChild(clone);
         }
     }

@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', handleData)
+
 // fetching the data from WordPress
 fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
     .then(res => res.json())
@@ -52,9 +54,10 @@ function showHappening(happening) {
 
 
     } else if (happening.happening_type == "Opening" ) {
+         console.log("Openings section works")
         document.querySelector(".openings").appendChild(clone);
         numberoffourOpenings++;
-         console.log("Openings section works")
+
     }
 
 }
@@ -152,6 +155,7 @@ function dropInstitutions() {
         console.log("wooooohoooo")
         document.querySelector(".showrooms").style.display = 'none';
         document.querySelector(".galleries").style.display = 'none';
+        document.querySelector(".openings").style.display = 'none';
         for (let i = 0; i < document.querySelector(".institutions").childNodes.length; i++) {
             if (document.querySelector(".institutions").childNodes[i].className == "event") {
                 document.querySelector(".institutions").removeChild(document.querySelector(".institutions").childNodes[i]);
@@ -211,6 +215,7 @@ function dropGalleries() {
         //        console.log("Galleries Drop works")
         document.querySelector(".showrooms").style.display = 'none';
         document.querySelector(".institutions").style.display = 'none';
+        document.querySelector(".openings").style.display = 'none';
         for (let i = 0; i < document.querySelector(".galleries").childNodes.length; i++) {
             if (document.querySelector(".galleries").childNodes[i].className == "event") {
                 document.querySelector(".galleries").removeChild(document.querySelector(".galleries").childNodes[i]);
@@ -270,6 +275,7 @@ function dropShowrooms() {
         //        console.log("Galleries Drop works")
         document.querySelector(".galleries").style.display = 'none';
         document.querySelector(".institutions").style.display = 'none';
+        document.querySelector(".openings").style.display = 'none';
         for (let i = 0; i < document.querySelector(".showrooms").childNodes.length; i++) {
             if (document.querySelector(".showrooms").childNodes[i].className == "event") {
                 document.querySelector(".showrooms").removeChild(document.querySelector(".showrooms").childNodes[i]);
@@ -316,7 +322,7 @@ function showHappeningShowroomsFull(happening) {
 
 
 
-//########################## DropDOwn OPENINGS ###############
+//########################## DropDown OPENINGS ###############
 
 
 // shows all the events in Openings
@@ -379,53 +385,53 @@ function showHappeningOpeningsFull(happening) {
 
 
 
-function resetFilter() {
-    document.getElementById("resetFilter").addEventListener("click", function () {
-        //       delets all the elements in the sections
-        for (let i = 0; i < document.querySelector(".institutions").childNodes.length; i++) {
-            if (document.querySelector(".institutions").childNodes[i].className == "event") {
-                document.querySelector(".institutions").removeChild(document.querySelector(".institutions").childNodes[i]);
-                //                console.log("aaaa");
-            }
-        }
-
-
-        for (let i = 0; i < document.querySelector(".galleries").childNodes.length; i++) {
-            if (document.querySelector(".galleries").childNodes[i].className == "event") {
-                document.querySelector(".galleries").removeChild(document.querySelector(".galleries").childNodes[i]);
-                //                console.log("aaaa");
-            }
-        }
-
-        for (let i = 0; i < document.querySelector(".showrooms").childNodes.length; i++) {
-            if (document.querySelector(".showrooms").childNodes[i].className == "event") {
-                document.querySelector(".showrooms").removeChild(document.querySelector(".showrooms").childNodes[i]);
-                //                console.log("aaaa");
-            }
-        }
-
-        for (let i = 0; i < document.querySelector(".openings").childNodes.length; i++) {
-            if (document.querySelector(".openings").childNodes[i].className == "event") {
-                document.querySelector(".openings").removeChild(document.querySelector(".openings").childNodes[i]);
-                //                console.log("aaaa");
-            }
-        }
-
-        numberoffourMuseums = 0;
-        numberoffourGalleries = 0;
-        numberoffourOther = 0;
-        numberoffourOpenings = 0;
-        console.log("reset pressed")
-        document.querySelector(".showrooms").style.display = 'grid';
-        document.querySelector(".galleries").style.display = 'grid';
-        document.querySelector(".institutions").style.display = 'grid';
-        fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
-            .then(res => res.json())
-            .then(handleData)
-    })
-}
-
-resetFilter();
+//function resetFilter() {
+//    document.getElementById("resetFilter").addEventListener("click", function () {
+//        //       delets all the elements in the sections
+//        for (let i = 0; i < document.querySelector(".institutions").childNodes.length; i++) {
+//            if (document.querySelector(".institutions").childNodes[i].className == "event") {
+//                document.querySelector(".institutions").removeChild(document.querySelector(".institutions").childNodes[i]);
+//                //                console.log("aaaa");
+//            }
+//        }
+//
+//
+//        for (let i = 0; i < document.querySelector(".galleries").childNodes.length; i++) {
+//            if (document.querySelector(".galleries").childNodes[i].className == "event") {
+//                document.querySelector(".galleries").removeChild(document.querySelector(".galleries").childNodes[i]);
+//                //                console.log("aaaa");
+//            }
+//        }
+//
+//        for (let i = 0; i < document.querySelector(".showrooms").childNodes.length; i++) {
+//            if (document.querySelector(".showrooms").childNodes[i].className == "event") {
+//                document.querySelector(".showrooms").removeChild(document.querySelector(".showrooms").childNodes[i]);
+//                //                console.log("aaaa");
+//            }
+//        }
+//
+//        for (let i = 0; i < document.querySelector(".openings").childNodes.length; i++) {
+//            if (document.querySelector(".openings").childNodes[i].className == "event") {
+//                document.querySelector(".openings").removeChild(document.querySelector(".openings").childNodes[i]);
+//                //                console.log("aaaa");
+//            }
+//        }
+//
+//        numberoffourMuseums = 0;
+//        numberoffourGalleries = 0;
+//        numberoffourOther = 0;
+//        numberoffourOpenings = 0;
+//        console.log("reset pressed")
+//        document.querySelector(".showrooms").style.display = 'grid';
+//        document.querySelector(".galleries").style.display = 'grid';
+//        document.querySelector(".institutions").style.display = 'grid';
+//        fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
+//            .then(res => res.json())
+//            .then(handleData)
+//    })
+//}
+//
+//resetFilter();
 
 
 
