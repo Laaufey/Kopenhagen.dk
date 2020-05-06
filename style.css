@@ -403,14 +403,14 @@ button.archive-btn {
 
 
 .reset_all {
-    padding: 0.5rem 0.8rem;
-    color: #6F00D2;
+    padding: 0.2rem 0.5rem;
+/*    color: #6F00D2;*/
     font-weight: 600;
     border: none;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 4px 2px;
+    margin: 4px 6px;
     cursor: pointer;
 }
 
@@ -420,6 +420,11 @@ button.archive-btn {
     color: white;
 }
 
+
+.searchWrapper {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
 
 
 .seeMore {
