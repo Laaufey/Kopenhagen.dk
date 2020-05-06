@@ -137,6 +137,28 @@ section {
         "line";
 }
 
+
+
+.eventAbout {
+    font-size: 1.6em;
+}
+.eventTitle{
+    font-size: 2em;
+}
+/*
+.eventDescription {
+    grid-area: event;
+}
+*/
+.eventPhoto {
+    max-height: 35vh;
+    min-width: auto;
+    overflow: hidden;
+    margin-bottom: 1em;
+
+}
+
+
 hr.line {
     border: 1px solid;
     grid-area: line;
@@ -217,6 +239,7 @@ button.archive-btn {
     margin: 2em 2em 2em 0;
     width: 7em;
 }
+
 .fa {
     padding-right: .7em;
     margin-top: .7em;
@@ -226,6 +249,16 @@ button.archive-btn {
     text-decoration: none;
     color: white;
 }
+
+.twoColSec{
+    margin: auto 15vw;
+    padding-top: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 5vh;
+
+}
+
 
 @media screen and (min-width: 420px) {
     .firstSec {
@@ -250,6 +283,7 @@ button.archive-btn {
     .photo {
         max-height: 15vh;
     }
+
 }
 
 .firstSec .event .mynd {
@@ -309,17 +343,17 @@ button.archive-btn {
 
 
 .search {
-    border: 0.1rem solid grey;
+    border: 0.01rem solid grey;
     padding: 14px 16px;
     color: grey;
     font-size: 1rem;
-    font-weight: 600;
+
 }
 
 ::placeholder {
     color: grey;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 300;
     opacity: 1;
     /* Firefox */
 }
@@ -366,18 +400,22 @@ button.archive-btn {
 .dropdown {
     float: left;
     overflow: hidden;
+
+
 }
 
 .dropdown .dropbtn {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 300;
     outline: none;
     color: grey;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
-    border: 0.1rem solid grey;
+    border: 0.01rem solid grey;
+
+
 }
 
 
@@ -394,6 +432,7 @@ button.archive-btn {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+
 }
 
 .dropdown-content a {
