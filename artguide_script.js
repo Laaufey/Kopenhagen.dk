@@ -1,9 +1,25 @@
-window.addEventListener('DOMContentLoaded', handleData)
+window.addEventListener('DOMContentLoaded', getData)
 
-// fetching the data from WordPress
-fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
-    .then(res => res.json())
-    .then(handleData)
+
+function getData() {
+
+    const ulrParams = new URLSearchParams(window.location.search);
+    console.log("URLSearchParams" + window.location);
+    const theHappeningId = ulrParams.get("happening_id");
+    console.log(theHappeningId);
+    // fetching the data from WordPress
+
+    if (theHappeningId) {
+        fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening/" + theHappeningId + "?_embed")
+            .then(res => res.json())
+            .then(showHappeningSingleEvent)
+    } else {
+        fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
+            .then(res => res.json())
+            .then(handleData)
+    }
+}
+
 
 
 //handeling the data
@@ -38,6 +54,12 @@ function showHappening(happening) {
 
     clone.querySelector(".eventImg").src = happening.image.guid;
 
+    let a = clone.querySelector('a');
+    if (a) {
+        a.href += happening.id;
+    }
+
+
 
     if (happening.location_type == "Museum" && numberoffourMuseums < 4) {
         document.querySelector(".institutions").appendChild(clone);
@@ -51,21 +73,22 @@ function showHappening(happening) {
     } else if (happening.location_type == "Other" && numberoffourOther < 4) {
         document.querySelector(".showrooms").appendChild(clone);
         numberoffourOther++;
-
-
-    } else if (happening.happening_type == "Opening" ) {
-         console.log("Openings section works")
-        document.querySelector(".openings").appendChild(clone);
-        numberoffourOpenings++;
-
+        //    } else if (happening.happening_type == "Opening" && numberoffourOpenings < 4 ) {
+        //         console.log( numberoffourOpenings)
+        //        document.querySelector(".openings").appendChild(clone);
+        //        numberoffourOpenings++;
+        //
+        //    }
+        document.querySelector(".openings").innerHTML = '';
+        document.querySelector(".exibitions").innerHTML = '';
+        document.querySelector(".events").innerHTML = '';
     }
-
 }
 
 
 
 
-//  Search bar
+// ###################   Search bar
 
 
 const wpLink = 'http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening';
@@ -96,6 +119,9 @@ function searchByKeyword(value) {
     document.querySelector(".institutions").innerHTML = '';
     document.querySelector(".galleries").innerHTML = '';
     document.querySelector(".showrooms").innerHTML = '';
+    document.querySelector(".openings").innerHTML = '';
+    document.querySelector(".exibitions").innerHTML = '';
+    document.querySelector(".events").innerHTML = '';
 }
 
 
@@ -131,6 +157,9 @@ function searchByArea(value) {
     document.querySelector(".institutions").innerHTML = '';
     document.querySelector(".galleries").innerHTML = '';
     document.querySelector(".showrooms").innerHTML = '';
+    document.querySelector(".openings").innerHTML = '';
+    document.querySelector(".exibitions").innerHTML = '';
+    document.querySelector(".events").innerHTML = '';
 }
 
 
@@ -144,15 +173,11 @@ function searchByArea(value) {
 //########################## MUSEUMS ###############
 
 
-// shows all the events in Museums
-function handleDataMuseumFull(happening) {
-    // looping through each post
-    happening.forEach(showHappeningMuseumFull)
-}
+
 
 function dropInstitutions() {
     document.getElementById("intitutionsDrop").addEventListener("click", function () {
-        console.log("wooooohoooo")
+        //        console.log("wooooohoooo")
         document.querySelector(".showrooms").style.display = 'none';
         document.querySelector(".galleries").style.display = 'none';
         document.querySelector(".openings").style.display = 'none';
@@ -170,6 +195,11 @@ function dropInstitutions() {
 dropInstitutions();
 
 
+// shows all the events in Museums
+function handleDataMuseumFull(happening) {
+    // looping through each post
+    happening.forEach(showHappeningMuseumFull)
+}
 
 
 function showHappeningMuseumFull(happening) {
@@ -204,11 +234,7 @@ function showHappeningMuseumFull(happening) {
 //########################## GALLERIES ###############
 
 
-// shows all the events in GAlleries
-function handleDataGalleriesFull(happening) {
-    // looping through each post
-    happening.forEach(showHappeningGalleriesFull)
-}
+
 
 function dropGalleries() {
     document.getElementById("galleriesDrop").addEventListener("click", function () {
@@ -230,6 +256,12 @@ function dropGalleries() {
 dropGalleries();
 
 
+
+// shows all the events in Galleries
+function handleDataGalleriesFull(happening) {
+    // looping through each post
+    happening.forEach(showHappeningGalleriesFull)
+}
 
 
 function showHappeningGalleriesFull(happening) {
@@ -264,11 +296,7 @@ function showHappeningGalleriesFull(happening) {
 //########################## SHOWROOMS ###############
 
 
-// shows all the events in Showrooms
-function handleDataShowroomsFull(happening) {
-    // looping through each post
-    happening.forEach(showHappeningShowroomsFull)
-}
+
 
 function dropShowrooms() {
     document.getElementById("showroomsDrop").addEventListener("click", function () {
@@ -290,6 +318,11 @@ function dropShowrooms() {
 dropShowrooms();
 
 
+// shows all the events in Showrooms
+function handleDataShowroomsFull(happening) {
+    // looping through each post
+    happening.forEach(showHappeningShowroomsFull)
+}
 
 
 function showHappeningShowroomsFull(happening) {
@@ -325,11 +358,7 @@ function showHappeningShowroomsFull(happening) {
 //########################## DropDown OPENINGS ###############
 
 
-// shows all the events in Openings
-function handleDataOpeningsFull(happening) {
-    // looping through each post
-    happening.forEach(showHappeningOpeningsFull)
-}
+
 
 function dropOpenings() {
     document.getElementById("openingsDrop").addEventListener("click", function () {
@@ -352,6 +381,12 @@ dropOpenings();
 
 
 
+// shows all the events in Openings
+function handleDataOpeningsFull(happening) {
+    // looping through each post
+    happening.forEach(showHappeningOpeningsFull)
+}
+
 
 function showHappeningOpeningsFull(happening) {
     //    console.log(happening)
@@ -372,9 +407,141 @@ function showHappeningOpeningsFull(happening) {
 
     if (happening.happening_type == "Opening") {
         document.querySelector(".openings").appendChild(clone);
-
     }
 }
+
+
+
+// ############################# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+//########################## DropDown EXIBITIONS ###############
+
+
+
+
+function dropExibitions() {
+    document.getElementById("exibitionsDrop").addEventListener("click", function () {
+
+        document.querySelector(".institutions").style.display = 'none';
+        document.querySelector(".galleries").style.display = 'none';
+        document.querySelector(".showrooms").style.display = 'none';
+        document.querySelector(".openings").style.display = 'none';
+        document.querySelector(".events").style.display = 'none';
+        //        for (let i = 0; i < document.querySelector(".showrooms").childNodes.length; i++) {
+        //            if (document.querySelector(".showrooms").childNodes[i].className == "event") {
+        //                document.querySelector(".showrooms").removeChild(document.querySelector(".showrooms").childNodes[i]);
+        ////                console.log("aaaa");
+        //            }
+        //        }
+        fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
+            .then(res => res.json())
+            .then(handleDataExibitionsFull)
+    })
+}
+dropExibitions();
+
+
+
+// shows all the events in Openings
+function handleDataExibitionsFull(happening) {
+    // looping through each post
+    happening.forEach(showHappeningExibitionsFull)
+    //    console.log("xxxxxx");
+}
+
+
+function showHappeningExibitionsFull(happening) {
+    //    console.log(happening)
+
+    //grab the template from html file
+    const template = document.querySelector("template").content;
+    //make a clone
+    const clone = template.cloneNode(true);
+
+    //change content of the template with content from WP posts
+    clone.querySelector(".eventTitle").innerHTML = happening.title.rendered;
+    clone.querySelector(".artistName").innerHTML = happening.artist;
+    clone.querySelector(".dateStart").innerHTML = happening.date_start;
+    clone.querySelector(".dateEnd").innerHTML = happening.date_end;
+
+    clone.querySelector(".eventImg").src = happening.image.guid;
+
+
+    if (happening.happening_type == "Exibition") {
+        document.querySelector(".exibitions").appendChild(clone);
+    }
+}
+
+
+
+// ############################# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+//########################## DropDown EVENTS ###############
+
+
+
+
+function dropEvents() {
+    document.getElementById("eventsDrop").addEventListener("click", function () {
+
+        document.querySelector(".institutions").style.display = 'none';
+        document.querySelector(".galleries").style.display = 'none';
+        document.querySelector(".showrooms").style.display = 'none';
+        document.querySelector(".openings").style.display = 'none';
+        document.querySelector(".exibitions").style.display = 'none';
+        //        for (let i = 0; i < document.querySelector(".showrooms").childNodes.length; i++) {
+        //            if (document.querySelector(".showrooms").childNodes[i].className == "event") {
+        //                document.querySelector(".showrooms").removeChild(document.querySelector(".showrooms").childNodes[i]);
+        ////                console.log("aaaa");
+        //            }
+        //        }
+        fetch("http://andreimihutoni.com/wp_kopenhagen/wp-json/wp/v2/happening")
+            .then(res => res.json())
+            .then(handleDataEventsFull)
+    })
+}
+dropEvents();
+
+
+
+// shows all the events in Openings
+function handleDataEventsFull(happening) {
+    // looping through each post
+    happening.forEach(showHappeningEventsFull)
+    //    console.log("xxxxxx");
+}
+
+
+function showHappeningEventsFull(happening) {
+    //    console.log(happening)
+
+    //grab the template from html file
+    const template = document.querySelector("template").content;
+    //make a clone
+    const clone = template.cloneNode(true);
+
+    //change content of the template with content from WP posts
+    clone.querySelector(".eventTitle").innerHTML = happening.title.rendered;
+    clone.querySelector(".artistName").innerHTML = happening.artist;
+    clone.querySelector(".dateStart").innerHTML = happening.date_start;
+    clone.querySelector(".dateEnd").innerHTML = happening.date_end;
+
+    clone.querySelector(".eventImg").src = happening.image.guid;
+
+
+    if (happening.happening_type == "Event") {
+        document.querySelector(".events").appendChild(clone);
+    }
+}
+
+
 
 // ############################# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -383,8 +550,8 @@ function showHappeningOpeningsFull(happening) {
 
 
 
-
-
+//
+//
 //function resetFilter() {
 //    document.getElementById("resetFilter").addEventListener("click", function () {
 //        //       delets all the elements in the sections
