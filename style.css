@@ -140,15 +140,20 @@ section {
         "line";
     margin-left: 8rem;
     margin-right: 8rem;
-
 }
 
 
+.aboutText {
+    position: relative;
+    margin: -1vw 10vw 5vw 10vw;
+}
 
 
 .eventAbout {
     font-size: 1.6em;
 }
+
+
 
 
 
