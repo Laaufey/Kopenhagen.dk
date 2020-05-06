@@ -26,11 +26,7 @@
     <!--    <button id="resetFilter">Reset filter</button>-->
 
 
-
-    <!--   we use the HTML DOM to assign an "oninput" event to an input element.-->
     <div class="searchWrapper">
-
-
         <div class="dropdown">
             <button class="dropbtn">Filter by location ↓
                 <i class="fa fa-caret-down"></i>
@@ -58,10 +54,10 @@
         <input oninput="searchByDate(this.value)" type="search" class="search searchByDate" placeholder="Date" onfocus="this.placeholder=''" onblur="this.placeholder='Date'">
         <input oninput="searchByArea(this.value)" type="search" class="search searchByarea" placeholder="City or Area" onfocus="this.placeholder=''" onblur="this.placeholder='Area'">
 
-             <button class="reset_all" onClick="window.location.reload();">Reset filters</button>
+
     </div>
 
-
+   <button class="reset_all" onClick="window.location.reload();">Reset filters</button>
 
 
 
@@ -151,6 +147,7 @@
     </footer>
     <template>
         <article class="event">
+           <div class="heart"><img class="heartImg" src="img/heart_icon_white_small.png"></div>
             <div class="photo"><img class="eventImg" src="Louisiana+230120_002.jpg"></div>
             <h3 class="eventTitle">NAME</h3>
             <h4 class="artistName">Artist</h4>

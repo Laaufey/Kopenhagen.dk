@@ -115,6 +115,7 @@ nav li a {
 section {
     margin: auto 5vw;
     column-gap: 2em;
+    margin-bottom: 4rem;
 }
 
 .firstSec {
@@ -127,6 +128,8 @@ section {
         "."
         "subscribe"
         "news";
+    margin-left: 8rem;
+    margin-right: 8rem;
 }
 
 .fourColSec {
@@ -135,9 +138,10 @@ section {
     grid-template-areas:
         "header"
         "line";
+    margin-left: 8rem;
+    margin-right: 8rem;
 
 }
-
 
 
 
@@ -195,14 +199,16 @@ article.newsletter {
 
 .eventImg {
     width: 100%;
-/*    height: auto;*/
+    /*    height: auto;*/
 }
 
+/*
 .event {
 
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+*/
 
 .subscribe {
     grid-area: subscribe;
@@ -272,10 +278,31 @@ button.archive-btn {
 }
 
 
+.event {
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
 
+.firstSec .event   {
+    position: relative;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
 
+.heart {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 5px;
+    padding-left:85%;
+}
 
+.heartImg {
 
+    max-width: 1rem;
+    height: auto;
+
+}
 
 
 
@@ -303,14 +330,14 @@ button.archive-btn {
     font-size: 1rem;
     font-weight: 300;
     opacity: 1;
-    /* Firefox */
+/*     Firefox */
 }
 
-/*    ##########    */
+/*    ##########
 
 
 
-/*    ##### Vav bar - Search bar styling  ######*/
+/*    ##### Nav bar - Search bar styling  ######*/
 
 
 .searchInNav {
@@ -403,14 +430,16 @@ button.archive-btn {
 
 
 .reset_all {
-    padding: 0.2rem 0.5rem;
-/*    color: #6F00D2;*/
+    padding: 0.5rem 0.5rem;
+    /*    color: #6F00D2;*/
     font-weight: 600;
     border: none;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 4px 6px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+
     cursor: pointer;
 }
 
