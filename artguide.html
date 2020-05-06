@@ -19,9 +19,9 @@
         </nav>
     </header>
     <h1 class="art">Art Guide</h1>
-    <h2 class="art">Browse</h2>
 
-<!--    <button id="resetFilter">Reset filter</button>-->
+
+    <!--    <button id="resetFilter">Reset filter</button>-->
 
 
 
@@ -60,21 +60,9 @@
 
     <button class="reset_all" onClick="window.location.reload();">Reset filters/search</button>
 
-    <!--
-    <div class="navbar">
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a id="intitutionsDrop" href="#">Institutions</a>
-                <a id="galleriesDrop" href="#">Galleries</a>
-                <a id="showroomsDrop" href="#">Showrooms</a>
-            </div>
-        </div>
-    </div>
--->
 
+
+    <h2 class="art">Browse</h2>
 
 
     <section class="searchResultWrapper fourColSec"></section>
@@ -121,22 +109,21 @@
     </section>
 
 
-<!--
 
     <section class="openings fourColSec">
         <h2>Openings</h2>
         <hr class="line">
-
-        <article class="event">
-            <img class="eventImg" src="Louisiana+230120_002.jpg">
-            <h3>NAME</h3>
-            <h4>Artist</h4>
-            <h5>Time</h5>
-        </article>
-
     </section>
--->
 
+    <section class="exibitions fourColSec">
+        <h2>Exibitions</h2>
+        <hr class="line">
+    </section>
+
+    <section class="events fourColSec">
+        <h2>Events</h2>
+        <hr class="line">
+    </section>
 
 
 
@@ -160,6 +147,7 @@
             <h3 class="eventTitle">NAME</h3>
             <h4 class="artistName">Artist</h4>
             <h5><span class="dateStart">Start</span> / <span class="dateEnd">End</span></h5>
+            <a href="singleEvent.html?happening_id=" class="seeMore">See more</a>
         </article>
     </template>
     <script src="artguide_script.js"></script>
