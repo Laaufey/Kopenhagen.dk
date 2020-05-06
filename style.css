@@ -135,33 +135,38 @@ section {
     grid-template-areas:
         "header"
         "line";
+
 }
+
+
 
 
 
 .eventAbout {
     font-size: 1.6em;
 }
-.eventTitle{
-    font-size: 2em;
-}
-/*
-.eventDescription {
-    grid-area: event;
-}
-*/
+
+
+
 .eventPhoto {
     max-height: 35vh;
     min-width: auto;
     overflow: hidden;
     margin-bottom: 1em;
 
+
 }
+
+
 
 
 hr.line {
     border: 1px solid;
     grid-area: line;
+}
+
+.line {
+    margin-bottom: 1rem;
 }
 
 .photo {
@@ -175,7 +180,7 @@ hr.line {
     max-height: 25vh;
 }
 
-article.event {
+article.eventafartist {
     display: flex;
     flex-flow: column;
     margin: 2em 0 4em 0;
@@ -190,6 +195,13 @@ article.newsletter {
 
 .eventImg {
     width: 100%;
+/*    height: auto;*/
+}
+
+.event {
+
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .subscribe {
@@ -250,7 +262,7 @@ button.archive-btn {
     color: white;
 }
 
-.twoColSec{
+.twoColSec {
     margin: auto 15vw;
     padding-top: 5vh;
     display: grid;
@@ -260,72 +272,8 @@ button.archive-btn {
 }
 
 
-@media screen and (min-width: 420px) {
-    .firstSec {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "header header"
-            "line line"
-            ". ."
-            "subscribe subscribe"
-            "news .";
-    }
 
-    .fourColSec {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "header header"
-            "line line";
-    }
 
-    .photo {
-        max-height: 15vh;
-    }
-
-}
-
-.firstSec .event .mynd {
-    max-height: 25vh;
-}
-
-@media screen and (min-width: 750px) {
-    .fourColSec {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            "header header header"
-            "line line line";
-    }
-
-    .photo {
-        max-height: 13vh;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .firstSec {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            "header header subscribe"
-            "line line line"
-            ". . news";
-    }
-
-    .fourColSec {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-areas:
-            "header header header header"
-            "line line line line";
-    }
-
-    .photo {
-        max-height: 15vh;
-    }
-}
 
 
 
@@ -477,12 +425,129 @@ button.archive-btn {
 .seeMore {
     text-decoration: none;
     color: #6F00D2;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s;
 }
 
 .seeMore:hover {
     color: #6F00D2;
-    transform: scale(1.2);
-    padding-left: 2rem;
+    transform: scale(1.1);
+    padding-left: 0.5rem;
+    font-weight: 800;
+}
+
+
+
+
+.singlePageSpan {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.sg {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.sg.artistName {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.sg.artistName {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.sg.locationName {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.sg.eventTitle {
+    font-size: 2em;
+}
+
+
+
+
+.eventDescription {
+    display: block;
+    margin: 2rem 15vw 10rem 15vw;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 420px) {
+    .firstSec {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "line line"
+            ". ."
+            "subscribe subscribe"
+            "news .";
+    }
+
+    .fourColSec {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header";
+        "line line";
+
+    }
+
+    .photo {
+        max-height: 15vh;
+    }
+
+}
+
+.firstSec .event .mynd {
+    max-height: 25vh;
+}
+
+@media screen and (min-width: 750px) {
+    .fourColSec {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "line line line";
+    }
+
+    .photo {
+        max-height: 13vh;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .firstSec {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header subscribe"
+            "line line line"
+            ". . news";
+    }
+
+    .fourColSec {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header header header"
+            "line line line line";
+    }
+
+    .photo {
+        max-height: 15vh;
+    }
 }

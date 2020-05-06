@@ -41,6 +41,7 @@ function showHappeningSingleEvent(happening){
     clone.querySelector(".artistName").innerHTML = happening.artist;
     clone.querySelector(".dateStart").innerHTML = happening.date_start;
     clone.querySelector(".dateEnd").innerHTML = happening.date_end;
+    clone.querySelector(".locationName").innerHTML = happening.location_name;
     clone.querySelector(".eventDescription").innerHTML = happening.content.rendered;
     clone.querySelector(".eventImg").src = happening.image.guid;
 
@@ -73,6 +74,7 @@ function showHappening(happening) {
     clone.querySelector(".artistName").innerHTML = happening.artist;
     clone.querySelector(".dateStart").innerHTML = happening.date_start;
     clone.querySelector(".dateEnd").innerHTML = happening.date_end;
+
 
     clone.querySelector(".eventImg").src = happening.image.guid;
 //    clone.querySelector(".eventImg").src = happening._links["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
