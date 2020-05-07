@@ -128,8 +128,10 @@ section {
         "."
         "subscribe"
         "news";
+/*
     margin-left: 8rem;
     margin-right: 8rem;
+*/
 }
 
 .fourColSec {
@@ -138,8 +140,10 @@ section {
     grid-template-areas:
         "header"
         "line";
+/*
     margin-left: 8rem;
     margin-right: 8rem;
+*/
 }
 
 
@@ -161,7 +165,7 @@ section {
     max-height: 35vh;
     min-width: auto;
     overflow: hidden;
-    margin-bottom: 1em;
+/*    margin-bottom: 1em;*/
 
 
 }
@@ -182,7 +186,7 @@ hr.line {
     max-height: 20vh;
     min-width: auto;
     overflow: hidden;
-    margin-bottom: 1em;
+/*    margin-bottom: 1em;*/
 }
 
 .firstSec .event .mynd {
