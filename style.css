@@ -77,7 +77,7 @@ nav li a {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-/*    margin-bottom: 5em;*/
+    /*    margin-bottom: 5em;*/
 }
 
 .frontPageImg {
@@ -128,7 +128,7 @@ section {
         "."
         "subscribe"
         "news";
-/*
+    /*
     margin-left: 8rem;
     margin-right: 8rem;
 */
@@ -140,7 +140,7 @@ section {
     grid-template-areas:
         "header"
         "line";
-/*
+    /*
     margin-left: 8rem;
     margin-right: 8rem;
 */
@@ -165,7 +165,7 @@ section {
     max-height: 35vh;
     min-width: auto;
     overflow: hidden;
-/*    margin-bottom: 1em;*/
+    /*    margin-bottom: 1em;*/
 
 
 }
@@ -186,7 +186,8 @@ hr.line {
     max-height: 20vh;
     min-width: auto;
     overflow: hidden;
-/*    margin-bottom: 1em;*/
+    margin-bottom: 0.5em;
+    /*    margin-bottom: 1em;*/
 }
 
 .firstSec .event .mynd {
@@ -202,7 +203,7 @@ article.eventafartist {
 article.newsletter {
     display: flex;
     flex-flow: column;
-    margin: 2em 0 4em 0;
+    margin: 1em 0 4em 0;
     grid-area: news;
 }
 
@@ -221,6 +222,7 @@ article.newsletter {
 
 .subscribe {
     grid-area: subscribe;
+    margin-top: 1em;
 }
 
 .email {
@@ -289,15 +291,16 @@ button.archive-btn {
 
 .event {
     position: relative;
-/*
+    margin-bottom: 1em
+        /*
     margin-left: 2rem;
     margin-right: 2rem;
 */
 }
 
-.firstSec .event   {
+.firstSec .event {
     position: relative;
-/*
+    /*
     margin-left: 4rem;
     margin-right: 4rem;
 */
@@ -307,7 +310,7 @@ button.archive-btn {
     position: absolute;
     margin-top: 5%;
     margin-left: 5px;
-    padding-left:85%;
+    padding-left: 85%;
 }
 
 .heartImg {
@@ -343,7 +346,7 @@ button.archive-btn {
     font-size: 1rem;
     font-weight: 300;
     opacity: 1;
-/*     Firefox */
+    /*     Firefox */
 }
 
 /*    ##########
@@ -548,24 +551,32 @@ button.archive-btn {
             "news .";
     }
 
+    /*
     .fourColSec {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "header header";
-        "line line";
-
+            "line line";
+    }
+*/
+    .fourColSec {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "line line";
     }
 
     .photo {
         max-height: 15vh;
     }
 
+    .firstSec .event .mynd {
+        max-height: 25vh;
+    }
 }
 
-.firstSec .event .mynd {
-    max-height: 25vh;
-}
 
 @media screen and (min-width: 750px) {
     .fourColSec {
@@ -601,5 +612,13 @@ button.archive-btn {
 
     .photo {
         max-height: 15vh;
+    }
+
+    article.newsletter {
+        margin: 2em 0 4em 0;
+    }
+
+    .subscribe {
+        margin-top: 0;
     }
 }
