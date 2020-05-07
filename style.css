@@ -251,9 +251,10 @@ article.newsletter {
 footer {
     background-color: #D3D3D3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns:1fr;
     font-weight: 100;
     bottom: 0;
+    text-align: center;
 }
 
 div.first {
@@ -590,6 +591,14 @@ button.archive-btn {
     .photo {
         max-height: 13vh;
     }
+
+    footer {
+    background-color: #D3D3D3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-weight: 100;
+    bottom: 0;
+}
 }
 
 @media screen and (min-width: 1024px) {
